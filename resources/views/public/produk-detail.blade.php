@@ -157,6 +157,10 @@ Order via WhatsApp
 
 </a>
 
+<a href="{{ route('pesanan.create',$product->id) }}"
+class="inline-flex px-5 py-3 rounded-lg border font-semibold">
+Pesan Sekarang
+</a>
 
 <a
 href="{{ route('produk') }}"

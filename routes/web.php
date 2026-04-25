@@ -6,7 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PenilaianController;
-
+use App\Http\Controllers\PesananPublicController;
+use App\Http\Controllers\Admin\PesananController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\PenilaianController as AdminPenilaianController;
@@ -45,8 +46,42 @@ Route::get('/profile', [ProfileController::class,'edit'])->name('profile.edit');
 Route::patch('/profile', [ProfileController::class,'update'])->name('profile.update');
 Route::delete('/profile', [ProfileController::class,'destroy'])->name('profile.destroy');
 
+Route::get(
+'/pesan/{id}',
+[PesananPublicController::class,'create']
+)->name('pesanan.create');
+
+Route::get(
+'/pesanan',
+[PesananPublicController::class,'index']
+)->name('pesanan.index');
+
+Route::post(
+'/pesan',
+[PesananPublicController::class,'store']
+)->name('pesanan.store');
 });
 
+Route::get(
+'/pesanan/{id}/edit',
+[PesananPublicController::class,'edit']
+)->name('pesanan.edit');
+
+
+Route::post(
+'/pesanan/{id}/update',
+[PesananPublicController::class,'update']
+)->name('pesanan.update');
+
+
+Route::delete(
+'/pesanan/{id}',
+[PesananPublicController::class,'destroy']
+)->name('pesanan.destroy');
+
+Route::get('/pesan',
+[PesananPublicController::class,'formUmum'])
+->name('pesanan.form');
 
 /*
 |--------------------------------------------------------------------------
@@ -116,8 +151,33 @@ Route::get('/kategori/{id}/edit', [KategoriController::class,'edit'])->name('kat
 Route::put('/kategori/{id}', [KategoriController::class,'update'])->name('kategori.update');
 Route::delete('/kategori/{id}', [KategoriController::class,'destroy'])->name('kategori.destroy');
 
+Route::get('/pesanan',
+[PesananController::class,'index'])
+->name('pesanan.index');
+
+Route::get('/pesanan/create',
+[PesananController::class,'create'])
+->name('pesanan.create');
+
+Route::post('/pesanan',
+[PesananController::class,'store'])
+->name('pesanan.store');
+
+Route::get('/pesanan/{id}/edit',
+[PesananController::class,'edit'])
+->name('pesanan.edit');
+
+Route::post('/pesanan/{id}',
+[PesananController::class,'update'])
+->name('pesanan.update');
+
+Route::delete('/pesanan/{id}',
+[PesananController::class,'destroy'])
+->name('pesanan.destroy');
 
 });
+
+
 
 
 require __DIR__.'/auth.php';

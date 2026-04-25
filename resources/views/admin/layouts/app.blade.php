@@ -39,6 +39,11 @@
             📂 Manajemen Kategori
         </a>
 
+        <a href="{{ route('admin.pesanan.index') }}"
+            class="block px-3 py-2 rounded hover:bg-gray-100">
+            📂 Manajemen Pesanan
+        </a>
+
     </nav>
   </aside>
 

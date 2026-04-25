@@ -8,6 +8,7 @@ return new class extends Migration
 {
 public function up(): void
 {
+    if (!Schema::hasTable('penilaian_foto')) 
 Schema::create('penilaian_foto', function (
 Blueprint $table
 ) {

@@ -48,6 +48,12 @@
            Testimoni
         </a>
       </li>
+<li>
+<a href="{{ route('pesanan.index') }}"
+class="{{ request()->is('pesanan') ? 'text-sky-600 font-bold':'hover:text-sky-600' }}">
+Pesanan
+</a>
+</li>
 
       <li>
         <a href="{{ url('/kontak') }}"
