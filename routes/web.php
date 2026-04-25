@@ -31,6 +31,9 @@ Route::post('/testimoni', [PenilaianController::class,'store'])->name('testimoni
 
 Route::get('/kontak', fn()=>view('public.kontak'))->name('kontak');
 
+Route::get('/admin/login', function(){
+return redirect('/login');
+});
 
 /*
 |--------------------------------------------------------------------------
